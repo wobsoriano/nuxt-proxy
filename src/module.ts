@@ -25,6 +25,7 @@ export default defineNuxtModule<Options>({
     const finalConfig = nuxt.options.runtimeConfig.proxy = defu(nuxt.options.runtimeConfig.proxy, {
       logger: options.logger,
       changeOrigin: options.changeOrigin,
+      ...options,
     })
 
     addTemplate({
