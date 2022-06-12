@@ -9,6 +9,7 @@ specifiers:
   dedent: ^0.7.0
   defu: ^6.0.0
   eslint: ^8.14.0
+  h3: ^0.7.9
   http-proxy-middleware: ^3.0.0-beta.0
   nuxt: ^3.0.0-rc.3
   pathe: ^0.3.0
@@ -18,6 +19,7 @@ dependencies:
   '@nuxt/kit': 3.0.0-rc.3
   dedent: 0.7.0
   defu: 6.0.0
+  h3: 0.7.9
   http-proxy-middleware: 3.0.0-beta.0
   pathe: 0.3.0
 
@@ -1801,7 +1803,6 @@ packages:
 
   /cookie-es/0.5.0:
     resolution: {integrity: sha512-RyZrFi6PNpBFbIaQjXDlFIhFVqV42QeKSZX1yQIl6ihImq6vcHNGMtqQ/QzY3RMPuYSkvsRwtnt5M9NeYxKt0g==}
-    dev: true
 
   /core-util-is/1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
@@ -3401,7 +3402,6 @@ packages:
       destr: 1.1.1
       radix3: 0.1.2
       ufo: 0.8.4
-    dev: true
 
   /has-bigints/1.0.2:
     resolution: {integrity: sha512-tSvCKtBr9lkF0Ex0aQiP9N+OpV4zi2r/Nee5VkRDbaqv35RLYMzbwQfFSZZH0kR+Rd6302UJZ2p/bJCEoR3VoQ==}
@@ -5338,7 +5338,6 @@ packages:
 
   /radix3/0.1.2:
     resolution: {integrity: sha512-Mpfd/OuX0zoJ6ojLD/RTOHvJPg6e6PjINtmYzV87kIXc5iUtDz34i7gg4SV4XjqRJTmSiYO/g9i/mKWGf4z8wg==}
-    dev: true
 
   /randombytes/2.1.0:
     resolution: {integrity: sha512-vYl3iOX+4CKUWuxGi9Ukhie6fsqXqS9FE2Zaic4tNFD2N2QQaXOMFbuKK4QmDHC0JO6B1Zp41J0LpT0oR68amQ==}

@@ -1,1 +1,1 @@
-export * from './dist/runtime/server'
+export * from './dist/runtime/middleware'

@@ -37,9 +37,12 @@
   "scripts": {
     "prepublishOnly": "nr build",
     "build": "nuxt-module-build",
+    "play": "nr build && nuxi dev playground",
+    "build:playground": "nuxi build playground",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "release": "bumpp --commit --push --tag && npm publish"
+    "release": "bumpp --commit --push --tag && npm publish",
+    "prepare": "nr build && nuxi prepare playground"
   },
   "peerDependencies": {
     "http-proxy-middleware": ">=3.0.0"
@@ -48,6 +51,7 @@
     "@nuxt/kit": "^3.0.0-rc.3",
     "dedent": "^0.7.0",
     "defu": "^6.0.0",
+    "h3": "^0.7.9",
     "http-proxy-middleware": "^3.0.0-beta.0",
     "pathe": "^0.3.0"
   },

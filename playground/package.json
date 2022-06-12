@@ -1,0 +1,7 @@
+{
+  "name": "playground",
+  "private": true,
+  "dependencies": {
+    "nuxt-proxy": "workspace:*"
+  }
+}
