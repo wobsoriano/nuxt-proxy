@@ -33,7 +33,7 @@ export default defineNuxtModule<Options>({
       getContents: () => dedent`
         import { createProxyMiddleware } from 'nuxt-proxy/middleware'
         
-        export default createProxyMiddleware(${finalConfig})
+        export default createProxyMiddleware(${JSON.stringify(finalConfig)})
       `,
     })
 
