@@ -34,6 +34,28 @@ export default defineNuxtConfig({
 // GET /api/users -> https://jsonplaceholder.typicode.com/users [304]
 ```
 
+## Usage with h3
+
+```ts
+import { createApp } from 'h3'
+import { createProxyMiddleware } from 'nuxt-proxy/middleware'
+
+const app = createApp()
+
+app.use(createProxyMiddleware({
+  target: 'https://jsonplaceholder.typicode.com',
+  changeOrigin: true,
+  pathRewrite: {
+    '^/api/todos': '/todos',
+    '^/api/users': '/users'
+  },
+  pathFilter: [
+    '/api/todos',
+    '/api/users'
+  ]
+}))
+```
+
 ## License
 
 MIT
