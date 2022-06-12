@@ -43,8 +43,8 @@
     "@nuxt/kit": "^3.0.0-rc.3",
     "dedent": "^0.7.0",
     "defu": "^6.0.0",
-    "h3": "^0.7.9",
-    "http-proxy-middleware": "^3.0.0-beta.0"
+    "http-proxy-middleware": "^3.0.0-beta.0",
+    "pathe": "^0.3.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.23.1",
