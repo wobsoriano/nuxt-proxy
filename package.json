@@ -1,0 +1,62 @@
+{
+  "name": "nuxt-proxy",
+  "type": "module",
+  "version": "0.0.0",
+  "packageManager": "pnpm@7.2.1",
+  "description": "Zero-runtime stylesheets in your Nuxt 3 apps.",
+  "keywords": [
+    "css",
+    "css-in-js",
+    "css-in-ts",
+    "vue",
+    "nuxt",
+    "vanilla",
+    "emotion"
+  ],
+  "license": "MIT",
+  "author": "Robert Soriano <sorianorobertc@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wobsoriano/nuxt-progress.git"
+  },
+  "main": "./dist/module.cjs",
+  "types": "./dist/types.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepublishOnly": "nr build",
+    "build": "nuxt-module-build",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "release": "bumpp --commit --push --tag && npm publish"
+  },
+  "peerDependencies": {
+    "http-proxy-middleware": ">=3.0.0"
+  },
+  "dependencies": {
+    "@nuxt/kit": "^3.0.0-rc.3",
+    "dedent": "^0.7.0",
+    "defu": "^6.0.0",
+    "h3": "^0.7.9",
+    "http-proxy-middleware": "^3.0.0-beta.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.23.1",
+    "@antfu/ni": "^0.16.2",
+    "@nuxt/module-builder": "latest",
+    "bumpp": "^7.1.1",
+    "eslint": "^8.14.0",
+    "nuxt": "^3.0.0-rc.3",
+    "pnpm": "^7.2.1"
+  },
+  "eslintConfig": {
+    "extends": "@antfu"
+  }
+}
