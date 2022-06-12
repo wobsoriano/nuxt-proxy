@@ -15,6 +15,7 @@ npm install nuxt-proxy
 ```ts
 export default defineNuxtConfig({
   modules: ['nuxt-proxy'],
+  // See options here https://github.com/chimurai/http-proxy-middleware#options
   proxy: {
     target: 'https://jsonplaceholder.typicode.com',
     changeOrigin: true,
