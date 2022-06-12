@@ -1,7 +1,7 @@
 import { fileURLToPath } from 'url'
 import { addServerHandler, addTemplate, defineNuxtModule, useLogger } from '@nuxt/kit'
 import type { Options } from 'http-proxy-middleware'
-import { join } from 'pathe'
+import { resolve } from 'pathe'
 import { defu } from 'defu'
 // @ts-expect-error: No types
 import dedent from 'dedent'
@@ -21,17 +21,10 @@ export default defineNuxtModule<Options>({
     const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
     nuxt.options.build.transpile.push(runtimeDir, '#build/proxy-handler')
 
-    const handlerPath = join(nuxt.options.buildDir, 'proxy-handler.ts')
-
     // Final resolved configuration
     const finalConfig = nuxt.options.runtimeConfig.proxy = defu(nuxt.options.runtimeConfig.proxy, {
       logger: options.logger,
       changeOrigin: options.changeOrigin,
-    })
-
-    addServerHandler({
-      handler: handlerPath,
-      middleware: true,
     })
 
     addTemplate({
@@ -42,6 +35,11 @@ export default defineNuxtModule<Options>({
         
         export default createProxyMiddleware(${finalConfig})
       `,
+    })
+
+    addServerHandler({
+      handler: resolve(nuxt.options.buildDir, 'proxy-handler.ts'),
+      middleware: true,
     })
   },
 })
