@@ -1,7 +1,7 @@
 {
   "name": "nuxt-proxy",
   "type": "module",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "packageManager": "pnpm@7.2.1",
   "description": "Http-proxy middleware for Nuxt 3.",
   "keywords": [
