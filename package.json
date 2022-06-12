@@ -3,15 +3,14 @@
   "type": "module",
   "version": "0.0.0",
   "packageManager": "pnpm@7.2.1",
-  "description": "Zero-runtime stylesheets in your Nuxt 3 apps.",
+  "description": "Http-proxy middleware for Nuxt 3.",
   "keywords": [
-    "css",
-    "css-in-js",
-    "css-in-ts",
-    "vue",
+    "proxy",
     "nuxt",
-    "vanilla",
-    "emotion"
+    "vue",
+    "http",
+    "connect",
+    "h3"
   ],
   "license": "MIT",
   "author": "Robert Soriano <sorianorobertc@gmail.com>",
