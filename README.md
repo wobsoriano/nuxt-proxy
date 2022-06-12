@@ -42,18 +42,7 @@ import { createProxyMiddleware } from 'nuxt-proxy/middleware'
 
 const app = createApp()
 
-app.use(createProxyMiddleware({
-  target: 'https://jsonplaceholder.typicode.com',
-  changeOrigin: true,
-  pathRewrite: {
-    '^/api/todos': '/todos',
-    '^/api/users': '/users'
-  },
-  pathFilter: [
-    '/api/todos',
-    '/api/users'
-  ]
-}))
+app.use(createProxyMiddleware({}))
 ```
 
 ## License
