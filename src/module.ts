@@ -1,4 +1,3 @@
-import { resolve } from 'path'
 import { addTemplate, defineNuxtModule, useLogger } from '@nuxt/kit'
 import type { Options } from 'http-proxy-middleware'
 import { defu } from 'defu'
@@ -17,8 +16,6 @@ export default defineNuxtModule<Options>({
     changeOrigin: true,
   },
   setup(options, nuxt) {
-    const buildDir = nuxt.options.buildDir
-
     // Final resolved configuration
     const finalConfig = nuxt.options.runtimeConfig.proxy = defu(nuxt.options.runtimeConfig.proxy, {
       logger: options.logger,
@@ -26,7 +23,7 @@ export default defineNuxtModule<Options>({
     })
 
     addTemplate({
-      src: resolve(buildDir, 'proxyMiddleware.mjs'),
+      src: 'proxyMiddleware.mjs',
       write: true,
       getContents: () => dedent`
         import { createProxyMiddleware } from 'http-proxy-middleware'
