@@ -24,10 +24,15 @@
     ".": {
       "import": "./dist/module.mjs",
       "require": "./dist/module.cjs"
+    },
+    "./middleware": {
+      "import": "./dist/runtime/middleware.mjs",
+      "types": "./dist/runtime/middleware.d.ts"
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "*.d.ts"
   ],
   "scripts": {
     "prepublishOnly": "nr build",

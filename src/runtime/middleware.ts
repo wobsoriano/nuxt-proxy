@@ -1,7 +1,7 @@
 import type { Options } from 'http-proxy-middleware'
 import { createProxyMiddleware as _createProxyMiddleware } from 'http-proxy-middleware'
 
-export default function createProxyMiddleware(options: Options) {
+export function createProxyMiddleware(options: Options) {
   const proxyMiddleware = _createProxyMiddleware(options)
 
   // @ts-expect-error: Resolved by Nuxt

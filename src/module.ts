@@ -28,10 +28,10 @@ export default defineNuxtModule<Options>({
     })
 
     addTemplate({
-      src: 'proxy-handler.ts',
+      filename: 'proxy-handler.ts',
       write: true,
       getContents: () => dedent`
-        import createProxyMiddleware from '#build/proxy-handler'
+        import { createProxyMiddleware } from 'nuxt-proxy/middleware'
         
         export default createProxyMiddleware(${finalConfig})
       `,
