@@ -3,7 +3,6 @@ import { addServerHandler, addTemplate, defineNuxtModule } from '@nuxt/kit'
 import type { Options } from 'http-proxy-middleware'
 import { join } from 'pathe'
 import { defu } from 'defu'
-// @ts-expect-error: No types
 import dedent from 'dedent'
 
 export default defineNuxtModule<Options>({
