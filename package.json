@@ -48,7 +48,7 @@
     "http-proxy-middleware": ">=3.0.0"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.0.0-rc.3",
+    "@nuxt/kit": "3.0.0-rc.4",
     "dedent": "^0.7.0",
     "defu": "^6.0.0",
     "h3": "^0.7.9",
@@ -59,6 +59,7 @@
     "@antfu/eslint-config": "^0.23.1",
     "@antfu/ni": "^0.16.2",
     "@nuxt/module-builder": "latest",
+    "@types/dedent": "^0.7.0",
     "bumpp": "^7.1.1",
     "eslint": "^8.14.0",
     "nuxt": "^3.0.0-rc.3",
