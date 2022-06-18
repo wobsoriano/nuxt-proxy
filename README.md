@@ -34,6 +34,13 @@ export default defineNuxtConfig({
 // GET /api/users -> https://jsonplaceholder.typicode.com/users [304]
 ```
 
+```html
+<script setup lang="ts">
+// Need the base url or it will load forever
+const { data } = useFetch('http://localhost:3000/api/todos')
+</script>
+```
+
 ## Usage with h3
 
 ```ts
