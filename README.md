@@ -35,7 +35,7 @@ export default defineNuxtConfig({
 ```
 
 ```html
-<script setup lang="ts">
+<script setup>
 // Need the base url or it will load forever
 const { data } = useFetch('http://localhost:3000/api/todos')
 </script>
