@@ -44,9 +44,6 @@
     "release": "bumpp --commit --push --tag && npm publish",
     "prepare": "nr build && nuxi prepare playground"
   },
-  "peerDependencies": {
-    "http-proxy-middleware": ">=3.0.0"
-  },
   "dependencies": {
     "@nuxt/kit": "3.0.0-rc.4",
     "dedent": "^0.7.0",
