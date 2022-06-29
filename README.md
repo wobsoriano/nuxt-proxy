@@ -41,17 +41,6 @@ const { data } = useFetch('http://localhost:3000/api/todos')
 </script>
 ```
 
-## Usage with h3
-
-```ts
-import { createApp } from 'h3'
-import { createProxyMiddleware } from 'nuxt-proxy/middleware'
-
-const app = createApp()
-
-app.use(createProxyMiddleware({}))
-```
-
 ## License
 
 MIT
