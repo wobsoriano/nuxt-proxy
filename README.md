@@ -1,6 +1,6 @@
 # nuxt-proxy
 
-[![Version](https://img.shields.io/npm/v/nuxt-proxy?style=flat&colorA=000000&colorB=000000)](https://www.npmjs.com/package/nuxt-proxy)
+[![Version](https://img.shields.io/npm/v/nuxt-proxy?style=flat&colorA=000000&colorB=000000)](https://www.npmjs.com/package/nuxt-proxy) ![NPM](https://img.shields.io/npm/l/nuxt-proxy?style=flat&colorA=000000&colorB=000000)
 
 Http-proxy middleware for Nuxt 3.
 
