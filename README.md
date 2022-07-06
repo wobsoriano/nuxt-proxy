@@ -43,7 +43,7 @@ const { data } = useFetch('http://localhost:3000/api/todos')
 </script>
 ```
 
-Multiple targets
+Pass an array instead for multiple targets
 
 ```ts
 export default defineNuxtConfig({
