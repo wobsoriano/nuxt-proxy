@@ -37,14 +37,14 @@ export default defineNuxtModule<ModuleOptions>({
   },
   setup(options, nuxt) {
     const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
-    nuxt.options.build.transpile.push(runtimeDir, '#build/proxy-handler')
+    nuxt.options.build.transpile.push(runtimeDir, 'nuxt-proxy', 'nuxt-proxy/middleware')
 
     // Final resolved configuration
     const finalConfig = (nuxt.options.runtimeConfig.proxy = defu(nuxt.options.runtimeConfig.proxy, options)) as ModuleOptions
 
     if (Array.isArray(finalConfig.options)) {
       finalConfig.options.forEach((options) => {
-        const filename = `proxy/${hash(objectHash(options))}.ts`
+        const filename = `proxy/handler_${hash(objectHash(options))}.ts`
         createProxyMiddleware(nuxt.options.buildDir, filename, options)
       })
     }

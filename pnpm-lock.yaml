@@ -37,6 +37,12 @@ importers:
       nuxt: 3.0.0-rc.3
       pnpm: 7.2.1
 
+  playground:
+    specifiers:
+      nuxt-proxy: workspace:*
+    dependencies:
+      nuxt-proxy: link:..
+
 packages:
 
   /@ampproject/remapping/2.2.0:

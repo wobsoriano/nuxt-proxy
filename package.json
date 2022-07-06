@@ -23,7 +23,8 @@
   "exports": {
     ".": {
       "import": "./dist/module.mjs",
-      "require": "./dist/module.cjs"
+      "require": "./dist/module.cjs",
+      "types": "./dist/module.d.ts"
     },
     "./middleware": {
       "import": "./dist/runtime/middleware.mjs",
