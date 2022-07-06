@@ -55,12 +55,10 @@ export default defineNuxtConfig({
         target: 'https://jsonplaceholder.typicode.com',
         changeOrigin: true,
         pathRewrite: {
-          '^/api/todos': '/todos',
-          '^/api/users': '/users'
+          '^/api/todos': '/todos'
         },
         pathFilter: [
-          '/api/todos',
-          '/api/users'
+          '/api/todos'
         ]
       },
       {
@@ -78,7 +76,6 @@ export default defineNuxtConfig({
 })
 
 // GET /api/todos -> https://jsonplaceholder.typicode.com/todos [304]
-// GET /api/users -> https://jsonplaceholder.typicode.com/users [304]
 // GET /api/launches -> https://api.spacexdata.com/v5/launches/latest [304]
 ```
 
