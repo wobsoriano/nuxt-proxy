@@ -37,7 +37,7 @@ export default defineNuxtModule<ModuleOptions>({
   },
   setup(options, nuxt) {
     const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
-    nuxt.options.build.transpile.push(runtimeDir, 'nuxt-proxy', 'nuxt-proxy/middleware')
+    nuxt.options.build.transpile.push(runtimeDir)
 
     // Final resolved configuration
     const finalConfig = (nuxt.options.runtimeConfig.proxy = defu(nuxt.options.runtimeConfig.proxy, options)) as ModuleOptions
