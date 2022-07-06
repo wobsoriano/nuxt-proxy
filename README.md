@@ -17,16 +17,18 @@ export default defineNuxtConfig({
   modules: ['nuxt-proxy'],
   // See options here https://github.com/chimurai/http-proxy-middleware#options
   proxy: {
-    target: 'https://jsonplaceholder.typicode.com',
-    changeOrigin: true,
-    pathRewrite: {
-      '^/api/todos': '/todos',
-      '^/api/users': '/users'
-    },
-    pathFilter: [
-      '/api/todos',
-      '/api/users'
-    ]
+    options: {
+      target: 'https://jsonplaceholder.typicode.com',
+      changeOrigin: true,
+      pathRewrite: {
+        '^/api/todos': '/todos',
+        '^/api/users': '/users'
+      },
+      pathFilter: [
+        '/api/todos',
+        '/api/users'
+      ]
+    }
   }
 })
 
@@ -39,6 +41,45 @@ export default defineNuxtConfig({
 // Base url is required
 const { data } = useFetch('http://localhost:3000/api/todos')
 </script>
+```
+
+Multiple targets
+
+```ts
+export default defineNuxtConfig({
+  modules: ['nuxt-proxy'],
+  // See options here https://github.com/chimurai/http-proxy-middleware#options
+  proxy: {
+    options: [
+      {
+        target: 'https://jsonplaceholder.typicode.com',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api/todos': '/todos',
+          '^/api/users': '/users'
+        },
+        pathFilter: [
+          '/api/todos',
+          '/api/users'
+        ]
+      },
+      {
+        target: 'https://api.spacexdata.com/v5',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api/launches': '/launches/latest',
+        },
+        pathFilter: [
+          '/api/launches',
+        ],
+      },
+    ]
+  }
+})
+
+// GET /api/todos -> https://jsonplaceholder.typicode.com/todos [304]
+// GET /api/users -> https://jsonplaceholder.typicode.com/users [304]
+// GET /api/launches -> https://api.spacexdata.com/v5/launches/latest [304]
 ```
 
 ## License
