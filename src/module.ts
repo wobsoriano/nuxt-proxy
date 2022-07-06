@@ -4,34 +4,54 @@ import type { Options } from 'http-proxy-middleware'
 import { join } from 'pathe'
 import { defu } from 'defu'
 import dedent from 'dedent'
+import { hash, objectHash } from 'ohash'
 
-export default defineNuxtModule<Options>({
+function createProxyMiddleware(buildDir: string, filename: string, options: Options) {
+  addTemplate({
+    filename,
+    write: true,
+    getContents: () => dedent`
+      import { createProxyMiddleware } from 'nuxt-proxy/middleware'
+
+      export default createProxyMiddleware(${JSON.stringify(options)})
+    `,
+  })
+
+  addServerHandler({
+    handler: join(buildDir, filename),
+    middleware: true,
+  })
+}
+
+export interface ModuleOptions {
+  options: Options[] | Options
+}
+
+export default defineNuxtModule<ModuleOptions>({
   meta: {
     name: 'nuxt-proxy',
     configKey: 'proxy',
   },
-  defaults: {},
+  defaults: {
+    options: [],
+  },
   setup(options, nuxt) {
     const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
     nuxt.options.build.transpile.push(runtimeDir, '#build/proxy-handler')
 
     // Final resolved configuration
-    const finalConfig = nuxt.options.runtimeConfig.proxy = defu(nuxt.options.runtimeConfig.proxy, options)
+    const finalConfig = (nuxt.options.runtimeConfig.proxy = defu(nuxt.options.runtimeConfig.proxy, options)) as ModuleOptions
 
-    addTemplate({
-      filename: 'proxy-handler.ts',
-      write: true,
-      getContents: () => dedent`
-        import { createProxyMiddleware } from 'nuxt-proxy/middleware'
-        
-        export default createProxyMiddleware(${JSON.stringify(finalConfig)})
-      `,
-    })
-
-    addServerHandler({
-      handler: join(nuxt.options.buildDir, 'proxy-handler.ts'),
-      middleware: true,
-    })
+    if (Array.isArray(finalConfig.options)) {
+      finalConfig.options.forEach((options) => {
+        const filename = `proxy/${hash(objectHash(options))}.ts`
+        createProxyMiddleware(nuxt.options.buildDir, filename, options)
+      })
+    }
+    else {
+      const filename = 'proxy_handler.ts'
+      createProxyMiddleware(nuxt.options.buildDir, filename, finalConfig.options)
+    }
   },
 })
 
