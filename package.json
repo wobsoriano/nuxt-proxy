@@ -16,7 +16,7 @@
   "author": "Robert Soriano <sorianorobertc@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wobsoriano/nuxt-progress.git"
+    "url": "https://github.com/wobsoriano/nuxt-proxy.git"
   },
   "main": "./dist/module.cjs",
   "types": "./dist/types.d.ts",
