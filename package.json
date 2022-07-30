@@ -46,7 +46,7 @@
     "prepare": "nr build && nuxi prepare playground"
   },
   "dependencies": {
-    "@nuxt/kit": "3.0.0-rc.5",
+    "@nuxt/kit": "3.0.0-rc.6",
     "dedent": "^0.7.0",
     "defu": "^6.0.0",
     "h3": "^0.7.9",
