@@ -52,7 +52,7 @@
     "h3": "^0.7.12",
     "http-proxy-middleware": "^3.0.0-beta.0",
     "ohash": "^0.1.4",
-    "pathe": "^0.3.0"
+    "pathe": "^0.3.2"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.23.1",
