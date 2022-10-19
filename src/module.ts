@@ -12,8 +12,9 @@ function createProxyMiddleware(buildDir: string, filename: string, options: Opti
     write: true,
     getContents: () => dedent`
       import { createProxyMiddleware } from 'nuxt-proxy/middleware'
+      import { useRuntimeConfig } from '#imports'
 
-      export default createProxyMiddleware(${JSON.stringify(options)})
+      export default createProxyMiddleware(useRuntimeConfig().proxy.options)
     `,
   })
 
