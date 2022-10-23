@@ -4,6 +4,12 @@
   "version": "0.2.4",
   "packageManager": "pnpm@7.2.1",
   "description": "Http-proxy middleware for Nuxt 3.",
+  "author": "Robert Soriano <sorianorobertc@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wobsoriano/nuxt-proxy.git"
+  },
   "keywords": [
     "proxy",
     "nuxt",
@@ -12,25 +18,19 @@
     "connect",
     "h3"
   ],
-  "license": "MIT",
-  "author": "Robert Soriano <sorianorobertc@gmail.com>",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/wobsoriano/nuxt-proxy.git"
+  "exports": {
+    ".": {
+      "types": "./dist/module.d.ts",
+      "require": "./dist/module.cjs",
+      "import": "./dist/module.mjs"
+    },
+    "./middleware": {
+      "types": "./dist/runtime/middleware.d.ts",
+      "import": "./dist/runtime/middleware.mjs"
+    }
   },
   "main": "./dist/module.cjs",
   "types": "./dist/types.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/module.mjs",
-      "require": "./dist/module.cjs",
-      "types": "./dist/module.d.ts"
-    },
-    "./middleware": {
-      "import": "./dist/runtime/middleware.mjs",
-      "types": "./dist/runtime/middleware.d.ts"
-    }
-  },
   "files": [
     "dist",
     "*.d.ts"
