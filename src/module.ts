@@ -2,7 +2,6 @@ import { fileURLToPath } from 'url'
 import { addServerHandler, addTemplate, defineNuxtModule } from '@nuxt/kit'
 import type { Options } from 'http-proxy-middleware'
 import { join } from 'pathe'
-import { defu } from 'defu'
 import dedent from 'dedent'
 import { hash, objectHash } from 'ohash'
 
@@ -14,7 +13,7 @@ function createProxyMiddleware(buildDir: string, filename: string, options: Opti
       import { createProxyMiddleware } from 'nuxt-proxy/middleware'
       import { useRuntimeConfig } from '#imports'
 
-      export default createProxyMiddleware(useRuntimeConfig().proxy.options)
+      export default createProxyMiddleware(${JSON.stringify(options)})
     `,
   })
 
@@ -40,8 +39,8 @@ export default defineNuxtModule<ModuleOptions>({
     const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
     nuxt.options.build.transpile.push(runtimeDir)
 
-    // Final resolved configuration
-    const finalConfig = (nuxt.options.runtimeConfig.proxy = defu(nuxt.options.runtimeConfig.proxy, options)) as ModuleOptions
+    // @ts-expect-error: Internal
+    const finalConfig = (nuxt.options.runtimeConfig.proxy = nuxt.options.runtimeConfig.proxy || { options: options.options }) as ModuleOptions
 
     if (Array.isArray(finalConfig.options)) {
       finalConfig.options.forEach((options) => {

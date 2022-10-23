@@ -40,6 +40,7 @@
     "build": "nuxt-module-build",
     "play": "nr build && nuxi dev playground",
     "build:playground": "nuxi build playground",
+    "preview:playground": "nuxi preview playground",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "release": "bumpp --commit --push --tag && npm publish",
@@ -48,7 +49,6 @@
   "dependencies": {
     "@nuxt/kit": "3.0.0-rc.12",
     "dedent": "^0.7.0",
-    "defu": "^6.0.0",
     "h3": "^0.8.5",
     "http-proxy-middleware": "^3.0.0-beta.0",
     "ohash": "^0.1.5",
