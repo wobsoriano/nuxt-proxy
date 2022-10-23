@@ -29,7 +29,11 @@ export default defineNuxtConfig({
         '/api/users'
       ]
     }
-  }
+  },
+  // OR
+  // runtimeConfig: {
+  //   proxy: {...}
+  // }
 })
 
 // GET /api/todos -> https://jsonplaceholder.typicode.com/todos [304]
