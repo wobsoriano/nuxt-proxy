@@ -43,10 +43,10 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "release": "bumpp --commit --push --tag && npm publish",
-    "prepare": "nr build && nuxi prepare playground"
+    "prepare": "nuxi prepare playground"
   },
   "dependencies": {
-    "@nuxt/kit": "3.0.0-rc.6",
+    "@nuxt/kit": "3.0.0-rc.12",
     "dedent": "^0.7.0",
     "defu": "^6.0.0",
     "h3": "^0.7.12",
