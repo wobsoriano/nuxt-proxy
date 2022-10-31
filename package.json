@@ -1,7 +1,7 @@
 {
   "name": "nuxt-proxy",
   "type": "module",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "packageManager": "pnpm@7.2.1",
   "description": "Http-proxy middleware for Nuxt 3.",
   "author": "Robert Soriano <sorianorobertc@gmail.com>",
