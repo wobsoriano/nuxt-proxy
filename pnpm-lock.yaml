@@ -11,6 +11,7 @@ importers:
       '@types/dedent': ^0.7.0
       bumpp: ^8.2.1
       dedent: ^0.7.0
+      defu: ^6.0.0
       eslint: ^8.14.0
       h3: ^0.8.5
       http-proxy-middleware: ^3.0.0-beta.0
@@ -21,6 +22,7 @@ importers:
     dependencies:
       '@nuxt/kit': 3.0.0-rc.12
       dedent: 0.7.0
+      defu: 6.1.0
       h3: 0.8.5
       http-proxy-middleware: 3.0.0-beta.0
       ohash: 0.1.5
@@ -2071,9 +2073,6 @@ packages:
       has-property-descriptors: 1.0.0
       object-keys: 1.1.1
     dev: true
-
-  /defu/6.0.0:
-    resolution: {integrity: sha512-t2MZGLf1V2rV4VBZbWIaXKdX/mUcYW0n2znQZoADBkGGxYL8EWqCuCZBmJPJ/Yy9fofJkyuuSuo5GSwo0XdEgw==}
 
   /defu/6.1.0:
     resolution: {integrity: sha512-pOFYRTIhoKujrmbTRhcW5lYQLBXw/dlTwfI8IguF1QCDJOcJzNH1w+YFjxqy6BAuJrClTy6MUE8q+oKJ2FLsIw==}
@@ -5276,7 +5275,7 @@ packages:
   /rc9/1.2.2:
     resolution: {integrity: sha512-zbe8+HR2X28eZepAwohuKkebbEsA67h0DO9I7g12QrHa2CQopR9gztOLPIPXXGTvcxeUjAN4wZ+b29t3m/u05g==}
     dependencies:
-      defu: 6.0.0
+      defu: 6.1.0
       destr: 1.1.1
       flat: 5.0.2
 

@@ -82,6 +82,46 @@ export default defineNuxtConfig({
 // GET /api/todos -> https://jsonplaceholder.typicode.com/todos [304]
 // GET /api/launches -> https://api.spacexdata.com/v5/launches/latest [304]
 ```
+### Runtime config
+
+Runtime configuration is valid if you put the configuration inside "runtimeConfig" and set your environment variables
+
+```env
+NUXT_PROXY_OPTIONS_TARGET=https://reqres.in/api
+```
+```ts
+export default defineNuxtConfig({
+  modules: ['nuxt-proxy'],
+  runtimeConfig: {
+    proxy: {
+      options: { target: 'https://jsonplaceholder.typicode.com', ...{ /* config */} }
+    }
+  }
+})
+// GET /api/users -> https://reqres.in/api/users [304]
+```
+
+Or for multiple targets
+
+```ts
+export default defineNuxtConfig({
+  modules: ['nuxt-proxy'],
+  runtimeConfig: {
+    proxy: {
+      options: [
+        { target: 'https://jsonplaceholder.typicode.com', ...{ /* config */} },
+        { target: 'https://api.spacexdata.com/v5', ...{ /* config */} },
+      ]
+    }
+  },
+})
+
+// GET /api/todos -> https://jsonplaceholder.typicode.com/todos [304]
+// GET /api/launches -> https://fake.wobsoriano.space/launches/latest [304]
+```
+```env
+NUXT_PROXY_OPTIONS=[{}, {"target": "https://fake.wobsoriano.space"}]
+```
 
 ## License
 
