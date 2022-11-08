@@ -13,7 +13,7 @@ importers:
       dedent: ^0.7.0
       defu: ^6.0.0
       eslint: ^8.14.0
-      h3: ^0.8.5
+      h3: ^0.8.6
       http-proxy-middleware: ^3.0.0-beta.0
       nuxt: 3.0.0-rc.13
       ohash: ^0.1.5
@@ -23,7 +23,7 @@ importers:
       '@nuxt/kit': 3.0.0-rc.13
       dedent: 0.7.0
       defu: 6.1.0
-      h3: 0.8.5
+      h3: 0.8.6
       http-proxy-middleware: 3.0.0-beta.0
       ohash: 0.1.5
       pathe: 0.3.9
@@ -2314,9 +2314,6 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /destr/1.1.1:
-    resolution: {integrity: sha512-QqkneF8LrYmwATMdnuD2MLI3GHQIcBnG6qFC2q9bSH430VTCDAVjcspPmUaKhPGtAtPAftIUFqY1obQYQuwmbg==}
-
   /destr/1.2.0:
     resolution: {integrity: sha512-JG+cG4ZPB1L27sl2C2URg8MIOmIUtTbE5wEx02BpmrTCqg/hXxFKXsYsnODl5PdpqNRaS1KQGUQ56V8jk8XpYQ==}
 
@@ -3927,15 +3924,6 @@ packages:
       duplexer: 0.1.2
     dev: true
 
-  /h3/0.8.5:
-    resolution: {integrity: sha512-A+rVzJ+31e67JJzlRf2Ycphu/mvl2qknbpch38xRfrs9HuGSKTtOWuzPnpgaEGIfnzuD/BsDOfhQLJevXEm3ag==}
-    dependencies:
-      cookie-es: 0.5.0
-      destr: 1.2.0
-      radix3: 0.2.1
-      ufo: 0.8.6
-    dev: false
-
   /h3/0.8.6:
     resolution: {integrity: sha512-CSWNOKa3QGo67rFU2PhbFTp0uPJtilNji2Z0pMiSRQt3+OkIW0u3E1WMJqIycLqaTgb9JyFqH/S4mcTyyGtvyQ==}
     dependencies:
@@ -3943,7 +3931,6 @@ packages:
       destr: 1.2.0
       radix3: 0.2.1
       ufo: 0.8.6
-    dev: true
 
   /has-bigints/1.0.2:
     resolution: {integrity: sha512-tSvCKtBr9lkF0Ex0aQiP9N+OpV4zi2r/Nee5VkRDbaqv35RLYMzbwQfFSZZH0kR+Rd6302UJZ2p/bJCEoR3VoQ==}
@@ -5718,7 +5705,7 @@ packages:
     resolution: {integrity: sha512-zbe8+HR2X28eZepAwohuKkebbEsA67h0DO9I7g12QrHa2CQopR9gztOLPIPXXGTvcxeUjAN4wZ+b29t3m/u05g==}
     dependencies:
       defu: 6.1.0
-      destr: 1.1.1
+      destr: 1.2.0
       flat: 5.0.2
 
   /read-cache/1.0.0:
