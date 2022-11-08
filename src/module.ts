@@ -43,7 +43,6 @@ export default defineNuxtModule<ModuleOptions>({
     const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
     nuxt.options.build.transpile.push(runtimeDir)
 
-    // @ts-expect-error: Internal
     const finalConfig = (nuxt.options.runtimeConfig.proxy = nuxt.options.runtimeConfig.proxy || { options: options.options }) as ModuleOptions
 
     if (Array.isArray(finalConfig.options)) {
