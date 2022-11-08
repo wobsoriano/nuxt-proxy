@@ -2,7 +2,6 @@
   "name": "nuxt-proxy",
   "type": "module",
   "version": "0.3.2",
-  "packageManager": "pnpm@7.2.1",
   "description": "Http-proxy middleware for Nuxt 3.",
   "author": "Robert Soriano <sorianorobertc@gmail.com>",
   "license": "MIT",
@@ -37,7 +36,7 @@
   ],
   "scripts": {
     "build": "nuxt-module-build",
-    "play": "nr build && nuxi dev playground",
+    "play": "pnpm build && nuxi dev playground",
     "build:playground": "nuxi build playground",
     "preview:playground": "nuxi preview playground",
     "lint": "eslint .",
@@ -47,22 +46,17 @@
   },
   "dependencies": {
     "@nuxt/kit": "3.0.0-rc.13",
-    "dedent": "^0.7.0",
     "defu": "^6.1.0",
     "h3": "^0.8.6",
     "http-proxy-middleware": "^3.0.0-beta.0",
-    "ohash": "^0.1.5",
-    "pathe": "^0.3.9"
+    "ohash": "^0.1.5"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.27.0",
-    "@antfu/ni": "^0.18.2",
     "@nuxt/module-builder": "^0.2.0",
-    "@types/dedent": "^0.7.0",
     "bumpp": "^8.2.1",
     "eslint": "^8.14.0",
-    "nuxt": "3.0.0-rc.13",
-    "pnpm": "^7.2.1"
+    "nuxt": "3.0.0-rc.13"
   },
   "eslintConfig": {
     "extends": "@antfu"

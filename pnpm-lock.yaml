@@ -5,37 +5,27 @@ importers:
   .:
     specifiers:
       '@antfu/eslint-config': ^0.27.0
-      '@antfu/ni': ^0.18.2
       '@nuxt/kit': 3.0.0-rc.13
       '@nuxt/module-builder': ^0.2.0
-      '@types/dedent': ^0.7.0
       bumpp: ^8.2.1
-      dedent: ^0.7.0
       defu: ^6.1.0
       eslint: ^8.14.0
       h3: ^0.8.6
       http-proxy-middleware: ^3.0.0-beta.0
       nuxt: 3.0.0-rc.13
       ohash: ^0.1.5
-      pathe: ^0.3.9
-      pnpm: ^7.2.1
     dependencies:
       '@nuxt/kit': 3.0.0-rc.13
-      dedent: 0.7.0
       defu: 6.1.0
       h3: 0.8.6
       http-proxy-middleware: 3.0.0-beta.0
       ohash: 0.1.5
-      pathe: 0.3.9
     devDependencies:
       '@antfu/eslint-config': 0.27.0_eslint@8.16.0
-      '@antfu/ni': 0.18.2
       '@nuxt/module-builder': 0.2.0
-      '@types/dedent': 0.7.0
       bumpp: 8.2.1
       eslint: 8.16.0
       nuxt: 3.0.0-rc.13_eslint@8.16.0
-      pnpm: 7.2.1
 
   playground:
     specifiers:
@@ -134,11 +124,6 @@ packages:
       - eslint-import-resolver-webpack
       - supports-color
       - typescript
-    dev: true
-
-  /@antfu/ni/0.18.2:
-    resolution: {integrity: sha512-OZalxEGupqCd8hKV2wyT5IHQTx1BR5/iXZEbseLpSdgcSn8fLjLOqi+LLhLly0a1XIkCAUeknV5/JXvMbjIstA==}
-    hasBin: true
     dev: true
 
   /@babel/code-frame/7.18.6:
@@ -1141,10 +1126,6 @@ packages:
   /@trysound/sax/0.2.0:
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
     engines: {node: '>=10.13.0'}
-    dev: true
-
-  /@types/dedent/0.7.0:
-    resolution: {integrity: sha512-EGlKlgMhnLt/cM4DbUSafFdrkeJoC9Mvnj0PUCU7tFmTjMjNRT957kXCx0wYm3JuEq4o4ZsS5vG+NlkM2DMd2A==}
     dev: true
 
   /@types/estree/1.0.0:
@@ -2264,10 +2245,6 @@ packages:
         optional: true
     dependencies:
       ms: 2.1.2
-
-  /dedent/0.7.0:
-    resolution: {integrity: sha512-Q6fKUPqnAHAyhiUgFU7BUzLiv0kd8saH9al7tnu5Q/okj6dnupxyTgFIBjVzJATdfIAm9NAsvXNzjaKa+bxVyA==}
-    dev: false
 
   /deep-is/0.1.4:
     resolution: {integrity: sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ==}
@@ -5310,12 +5287,6 @@ packages:
   /pluralize/8.0.0:
     resolution: {integrity: sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==}
     engines: {node: '>=4'}
-    dev: true
-
-  /pnpm/7.2.1:
-    resolution: {integrity: sha512-Z2Wg7YHxeit2U+0aSj+doBPF9+ER0e3VLOGuJOQbk8rzIxK6zMtrQ0ICieCUGPWRM0Vbwj8yIcTKzO22Yhs/Cg==}
-    engines: {node: '>=14.6'}
-    hasBin: true
     dev: true
 
   /postcss-calc/8.2.4_postcss@8.4.18:
