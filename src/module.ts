@@ -1,30 +1,19 @@
 import { fileURLToPath } from 'url'
-import { addServerHandler, addTemplate, defineNuxtModule } from '@nuxt/kit'
+import { addServerHandler, defineNuxtModule } from '@nuxt/kit'
 import type { Options } from 'http-proxy-middleware'
-import { join } from 'pathe'
-import dedent from 'dedent'
 import { hash, objectHash } from 'ohash'
 
-function createProxyMiddleware(buildDir: string, filename: string, options: Options, index?: number) {
-  addTemplate({
-    filename,
-    write: true,
-    getContents: () => dedent`
-      import { createProxyMiddleware } from 'nuxt-proxy/middleware'
-      import { defu } from 'defu'
-      import { useRuntimeConfig } from '#imports'
+function createProxyMiddleware(options: Options, index?: number) {
+  return `
+    import { createProxyMiddleware } from 'nuxt-proxy/middleware'
+    import { defu } from 'defu'
+    import { useRuntimeConfig } from '#imports'
 
-      const buildtimeOptions = ${JSON.stringify(options)}
-      const runtimeOptions = [].concat(useRuntimeConfig().proxy?.options)[${JSON.stringify(index)} ?? 0]
+    const buildtimeOptions = ${JSON.stringify(options)}
+    const runtimeOptions = [].concat(useRuntimeConfig().proxy?.options)[${JSON.stringify(index)} ?? 0]
 
-      export default createProxyMiddleware(defu(runtimeOptions, buildtimeOptions))
-    `,
-  })
-
-  addServerHandler({
-    handler: join(buildDir, filename),
-    middleware: true,
-  })
+    export default createProxyMiddleware(defu(runtimeOptions, buildtimeOptions))
+  `
 }
 
 export interface ModuleOptions {
@@ -41,20 +30,34 @@ export default defineNuxtModule<ModuleOptions>({
   },
   setup(options, nuxt) {
     const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
-    nuxt.options.build.transpile.push(runtimeDir)
+    nuxt.options.build.transpile.push(runtimeDir, '#proxy-handler')
 
     const finalConfig = (nuxt.options.runtimeConfig.proxy = nuxt.options.runtimeConfig.proxy || { options: options.options }) as ModuleOptions
 
-    if (Array.isArray(finalConfig.options)) {
-      finalConfig.options.forEach((options, index) => {
-        const filename = `proxy/handler_${hash(objectHash(options))}.ts`
-        createProxyMiddleware(nuxt.options.buildDir, filename, options, index)
-      })
-    }
-    else {
-      const filename = 'proxy_handler.ts'
-      createProxyMiddleware(nuxt.options.buildDir, filename, finalConfig.options)
-    }
+    nuxt.hook('nitro:config', (nitroConfig) => {
+      nitroConfig.virtual = nitroConfig.virtual || {}
+
+      if (Array.isArray(finalConfig.options)) {
+        finalConfig.options.forEach((options, index) => {
+          const handler = `#proxy-handler-${hash(objectHash(options))}`
+          nitroConfig.virtual![handler] = createProxyMiddleware(options, index)
+
+          addServerHandler({
+            handler,
+            middleware: true,
+          })
+        })
+      }
+      else {
+        const handler = '#proxy-handler'
+        nitroConfig.virtual[handler] = createProxyMiddleware(finalConfig.options)
+
+        addServerHandler({
+          handler,
+          middleware: true,
+        })
+      }
+    })
   },
 })
 
