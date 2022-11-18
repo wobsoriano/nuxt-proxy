@@ -7,7 +7,7 @@ export function createProxyMiddleware(options: Options) {
 
   return defineEventHandler(async (event) => {
     await new Promise((resolve, reject) => {
-      proxyMiddleware(event.req, event.res, (err?: unknown) => {
+      proxyMiddleware(event.node.req, event.node.res, (err?: unknown) => {
         if (err)
           reject(err)
         else
