@@ -4,6 +4,10 @@
 
 Http-proxy middleware for Nuxt and [h3](https://github.com/unjs/h3).
 
+## ⭐️ Before using
+
+Check out H3's built-in [proxyRequest](https://www.jsdocs.io/package/h3#proxyRequest) helper before using this module. 😀
+
 ## Installation
 
 ```bash
