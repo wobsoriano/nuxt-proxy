@@ -40,7 +40,7 @@ export default defineNuxtModule<ModuleOptions>({
 
       if (Array.isArray(finalConfig.options)) {
         finalConfig.options.forEach((options, index) => {
-          const handler = `#proxy-handler-${hash(objectHash(options))}`
+          const handler = `#http-proxy/${hash(objectHash(options))}`
           nitroConfig.virtual![handler] = createProxyMiddleware(options, index)
 
           addServerHandler({
@@ -50,7 +50,7 @@ export default defineNuxtModule<ModuleOptions>({
         })
       }
       else {
-        const handler = '#proxy-handler'
+        const handler = `#http-proxy/${hash(objectHash(finalConfig.options))}`
         nitroConfig.virtual[handler] = createProxyMiddleware(finalConfig.options)
 
         addServerHandler({
