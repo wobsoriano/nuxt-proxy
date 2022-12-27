@@ -51,44 +51,9 @@ const { data } = useFetch('http://localhost:3000/api/todos')
 </script>
 ```
 
-Pass an array instead for multiple targets
+You can pass an array of options for multiple targets.
 
-```ts
-export default defineNuxtConfig({
-  modules: ['nuxt-proxy'],
-  // See options here https://github.com/chimurai/http-proxy-middleware#options
-  proxy: {
-    options: [
-      {
-        target: 'https://jsonplaceholder.typicode.com',
-        changeOrigin: true,
-        pathRewrite: {
-          '^/api/todos': '/todos'
-        },
-        pathFilter: [
-          '/api/todos'
-        ]
-      },
-      {
-        target: 'https://api.spacexdata.com/v5',
-        changeOrigin: true,
-        pathRewrite: {
-          '^/api/launches': '/launches/latest',
-        },
-        pathFilter: [
-          '/api/launches',
-        ],
-      },
-    ]
-  }
-})
-
-// GET /api/todos -> https://jsonplaceholder.typicode.com/todos [304]
-// GET /api/launches -> https://api.spacexdata.com/v5/launches/latest [304]
-```
-### Runtime config
-
-Runtime configuration is valid if you put the configuration inside "runtimeConfig" and set your environment variables
+## Runtime config
 
 ```env
 NUXT_PROXY_OPTIONS_TARGET=https://reqres.in/api
@@ -103,28 +68,6 @@ export default defineNuxtConfig({
   }
 })
 // GET /api/users -> https://reqres.in/api/users [304]
-```
-
-Or for multiple targets
-
-```ts
-export default defineNuxtConfig({
-  modules: ['nuxt-proxy'],
-  runtimeConfig: {
-    proxy: {
-      options: [
-        { target: 'https://jsonplaceholder.typicode.com', ...{ /* config */} },
-        { target: 'https://api.spacexdata.com/v5', ...{ /* config */} },
-      ]
-    }
-  },
-})
-
-// GET /api/todos -> https://jsonplaceholder.typicode.com/todos [304]
-// GET /api/launches -> https://fake.wobsoriano.space/launches/latest [304]
-```
-```env
-NUXT_PROXY_OPTIONS=[{}, {"target": "https://fake.wobsoriano.space"}]
 ```
 
 ## License
