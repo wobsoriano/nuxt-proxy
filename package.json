@@ -35,24 +35,26 @@
     "*.d.ts"
   ],
   "scripts": {
-    "build": "nuxt-module-build",
-    "play": "pnpm build && nuxi dev playground",
-    "build:playground": "nuxi build playground",
-    "preview:playground": "nuxi preview playground",
+    "prepack": "nuxt-module-build",
+    "dev": "nuxi dev playground",
+    "dev:build": "nuxi build playground",
+    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "release": "bumpp --commit --push --tag && npm publish",
+    "update-deps": "taze -w && pnpm i",
+    "release": "bumpp && npm publish",
     "prepare": "nuxi prepare playground"
   },
   "dependencies": {
     "@nuxt/kit": "3.0.0",
     "defu": "^6.1.1",
-    "h3": "^1.0.1",
+    "h3": "^1.0.2",
     "http-proxy-middleware": "^3.0.0-beta.0",
-    "ohash": "^1.0.0"
+    "ohash": "^1.0.0",
+    "pathe": "^1.0.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.27.0",
+    "@antfu/eslint-config": "^0.34.0",
     "@nuxt/module-builder": "^0.2.1",
     "bumpp": "^8.2.1",
     "eslint": "^8.14.0",
