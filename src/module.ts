@@ -1,4 +1,5 @@
 import { fileURLToPath } from 'url'
+import { defu } from 'defu'
 import { addServerHandler, defineNuxtModule } from '@nuxt/kit'
 import { resolve } from 'pathe'
 import type { Options } from 'http-proxy-middleware'
@@ -20,7 +21,9 @@ export default defineNuxtModule<ModuleOptions>({
     const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
     nuxt.options.build.transpile.push(runtimeDir, '#proxy-handler')
 
-    const finalConfig = (nuxt.options.runtimeConfig.proxy = nuxt.options.runtimeConfig.proxy || { options: options.options }) as ModuleOptions
+    const finalConfig = nuxt.options.runtimeConfig.proxy = defu(nuxt.options.runtimeConfig.proxy, {
+      options: options.options,
+    })
 
     function createProxyMiddleware(options: Options, index?: number) {
       return `
