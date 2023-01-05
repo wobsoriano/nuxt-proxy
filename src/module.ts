@@ -1,4 +1,4 @@
-import { fileURLToPath } from 'url'
+import { fileURLToPath } from 'node:url'
 import { defu } from 'defu'
 import { addServerHandler, createResolver, defineNuxtModule } from '@nuxt/kit'
 import type { Options } from 'http-proxy-middleware'
