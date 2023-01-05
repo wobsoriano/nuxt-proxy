@@ -1,7 +1,6 @@
 import { fileURLToPath } from 'url'
 import { defu } from 'defu'
-import { addServerHandler, defineNuxtModule } from '@nuxt/kit'
-import { resolve } from 'pathe'
+import { addServerHandler, createResolver, defineNuxtModule } from '@nuxt/kit'
 import type { Options } from 'http-proxy-middleware'
 import { hash, objectHash } from 'ohash'
 
@@ -18,6 +17,7 @@ export default defineNuxtModule<ModuleOptions>({
     options: [],
   },
   setup(options, nuxt) {
+    const { resolve } = createResolver(import.meta.url)
     const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
     nuxt.options.build.transpile.push(runtimeDir, '#proxy-handler')
 

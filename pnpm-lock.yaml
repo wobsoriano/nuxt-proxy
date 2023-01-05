@@ -14,14 +14,12 @@ importers:
       http-proxy-middleware: ^3.0.0-beta.0
       nuxt: 3.0.0
       ohash: ^1.0.0
-      pathe: ^1.0.0
     dependencies:
       '@nuxt/kit': 3.0.0
       defu: 6.1.1
       h3: 1.0.2
       http-proxy-middleware: 3.0.0-beta.0
       ohash: 1.0.0
-      pathe: 1.0.0
     devDependencies:
       '@antfu/eslint-config': 0.34.0_eslint@8.27.0
       '@nuxt/module-builder': 0.2.1
