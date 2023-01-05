@@ -56,8 +56,9 @@
     "@antfu/eslint-config": "^0.34.0",
     "@nuxt/module-builder": "^0.2.1",
     "bumpp": "^8.2.1",
-    "eslint": "^8.14.0",
-    "nuxt": "3.0.0"
+    "eslint": "^8.31.0",
+    "nuxt": "3.0.0",
+    "taze": "^0.8.5"
   },
   "eslintConfig": {
     "extends": "@antfu"
