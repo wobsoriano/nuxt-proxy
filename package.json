@@ -42,8 +42,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "update-deps": "taze -w && pnpm i",
-    "release": "bumpp && npm publish",
-    "prepare": "nuxi prepare playground"
+    "release": "bumpp && npm publish"
   },
   "dependencies": {
     "@nuxt/kit": "3.0.0",
