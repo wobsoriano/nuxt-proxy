@@ -27,7 +27,7 @@ export default defineNuxtModule<ModuleOptions>({
 
     function createProxyMiddleware(options: Options, index?: number) {
       return `
-        import { createProxyMiddleware } from ${JSON.stringify(resolve(runtimeDir, './middleware'))}
+        import { createProxyMiddleware } from ${JSON.stringify(resolve(runtimeDir, './middleware.ts'))}
         import { defu } from 'defu'
         import { useRuntimeConfig } from '#imports'
     
