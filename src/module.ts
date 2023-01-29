@@ -12,6 +12,7 @@ export default defineNuxtModule<ModuleOptions>({
   meta: {
     name: 'nuxt-proxy',
     configKey: 'proxy',
+    version: '^3.1.0',
   },
   defaults: {
     options: [],
