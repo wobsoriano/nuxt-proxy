@@ -1,0 +1,10 @@
+diff --git a/dist/debug.js b/dist/debug.js
+index 31f4e4bf1b81f0914d29e8ef839eab9dfd9d3fb9..b4f9db93945384f852f70fe9fccee0c480289ab9 100644
+--- a/dist/debug.js
++++ b/dist/debug.js
+@@ -5,4 +5,4 @@ const createDebug = require("debug");
+ /**
+  * Debug instance with the given namespace: http-proxy-middleware
+  */
+-exports.Debug = createDebug('http-proxy-middleware');
++exports.Debug = Object.assign(createDebug('http-proxy-middleware'), {extend: ()=>{return ()=> {}}});

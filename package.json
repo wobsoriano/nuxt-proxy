@@ -58,5 +58,10 @@
   },
   "eslintConfig": {
     "extends": "@antfu"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "http-proxy-middleware@3.0.0-beta.0": "patches/http-proxy-middleware@3.0.0-beta.0.patch"
+    }
   }
 }
