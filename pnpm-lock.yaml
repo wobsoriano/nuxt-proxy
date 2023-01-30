@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 patchedDependencies:
   http-proxy-middleware@3.0.0-beta.0:
-    hash: p437tvijenotxqrb2cfou6hzia
+    hash: y4tijrza67qvtyyhn7ohlf5xki
     path: patches/http-proxy-middleware@3.0.0-beta.0.patch
 
 importers:
@@ -24,7 +24,7 @@ importers:
       '@nuxt/kit': 3.1.1
       defu: 6.1.2
       h3: 1.1.0
-      http-proxy-middleware: 3.0.0-beta.0_p437tvijenotxqrb2cfou6hzia
+      http-proxy-middleware: 3.0.0-beta.0_y4tijrza67qvtyyhn7ohlf5xki
       ohash: 1.0.0
     devDependencies:
       '@antfu/eslint-config': 0.34.0_eslint@8.31.0
@@ -4275,7 +4275,7 @@ packages:
       - supports-color
     dev: true
 
-  /http-proxy-middleware/3.0.0-beta.0_p437tvijenotxqrb2cfou6hzia:
+  /http-proxy-middleware/3.0.0-beta.0_y4tijrza67qvtyyhn7ohlf5xki:
     resolution: {integrity: sha512-99DWW7XRJdLGkVKkXh7sOP1adeSMss2wzI6qAI7klyishj/E8/I+EgtvPuFsSdZ+zDy2D8YizF8vs31Y61Y1bA==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
